@@ -9,17 +9,75 @@ import UIKit
 import ReactorKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 final class MainViewController: UIViewController, View {
+    
+    typealias DataSource = RxTableViewSectionedReloadDataSource<TodoSection>
     typealias Reactor = MainViewReactor
+    
     var disposeBag = DisposeBag()
     
     private let navigationBar: NavigationBarProtocol = NavigationBarView()
     private let tableView = UITableView()
     
+    private lazy var dataSource: DataSource = {
+        let ds = DataSource { dataSource, tableView, indexPath, item in
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)
+            var content = cell.defaultContentConfiguration()
+            
+            content.text = item.title
+    
+            cell.contentConfiguration = content
+            cell.accessoryType = item.isChecked ? .checkmark : .none
+            cell.selectionStyle = .none
+            
+            return cell
+        }
+        
+        return ds
+    }()
+    
+    // View를 채택했을 때는 bind > viewDidLoad 순으로 호춣
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
+        setTableView()
+    }
+    
+    func bind(reactor: Reactor) {
+        bindStates(reactor)
+        bindActions(reactor)
+    }
+
+}
+
+private extension MainViewController {
+    
+    func bindStates(_ reactor: Reactor) {
+        reactor.state
+            .map { $0.sections }
+            .bind(to: tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+            
+    }
+    
+    func bindActions(_ reactor: Reactor) {
+        Observable.just(())
+            .map { Reactor.Action.didInitBinding }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        navigationBar
+            .setRightButton(systemName: "plus")
+            .map { Reactor.Action.addButtonTapped }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected
+            .map(Reactor.Action.didSelected)
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
     }
     
     func setupLayout() {
@@ -27,7 +85,7 @@ final class MainViewController: UIViewController, View {
         
         navigationBar.setTitle("hello")
         
-        [navigationBar].forEach {
+        [navigationBar, tableView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
@@ -45,19 +103,7 @@ final class MainViewController: UIViewController, View {
         ])
     }
     
-    func bind(reactor: Reactor) {
-        bindStates(reactor)
-        bindActions(reactor)
+    func setTableView() {
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "TodoCell")
     }
-    
-    private func bindStates(_ reactor: Reactor) {
-        
-    }
-    
-    private func bindActions(_ reactor: Reactor) {
-        
-    }
-
-
 }
-
