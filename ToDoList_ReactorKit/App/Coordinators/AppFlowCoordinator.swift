@@ -12,8 +12,8 @@ protocol Coordinator {
 }
 
 final class AppFlowCoordinator {
-    var childCoordinators: [Coordinator] = []
     private var navigationController: UINavigationController
+    private var childCoordinators: [Coordinator] = []
     private let dependencies: AppDependencies
     
     init(
@@ -26,9 +26,9 @@ final class AppFlowCoordinator {
     }
     
     func setNavigationBar() {
-        self.navigationController.navigationBar.isHidden = true
         self.navigationController.modalPresentationStyle = .fullScreen
         self.navigationController.modalTransitionStyle = .crossDissolve
+        self.navigationController.navigationBar.isHidden = true
     }
     
     func start() {
@@ -40,5 +40,9 @@ final class AppFlowCoordinator {
         let mainFlowCoordinator = mainDIContainer.makeMainFlowCoordinator(navigationController: navigationController)
         childCoordinators.append(mainFlowCoordinator)
         mainFlowCoordinator.start()
+    }
+    
+    deinit {
+        print("AppFlowCoordinator is Deinit")
     }
 }
