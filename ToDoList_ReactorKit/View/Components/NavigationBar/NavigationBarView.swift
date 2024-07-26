@@ -24,8 +24,16 @@ protocol NavigationBarProtocol where Self: UIView {
         imageName: String
     ) -> Observable<Void>
     
+    func setLeftButton(
+        systemName: String
+    ) -> Observable<Void>
+    
     func setRightButton(
         imageName: String
+    ) -> Observable<Void>
+    
+    func setRightButton(
+        systemName: String
     ) -> Observable<Void>
     
     func setHiddenButton(
@@ -42,10 +50,6 @@ extension NavigationBarProtocol {
 }
 
 final class NavigationBarView: UIView, NavigationBarProtocol {
-    
-    private var leftButtonAction = PublishRelay<Void>()
-    private var rightButtonAction = PublishRelay<Void>()
-    private var hiddenButtonAction = PublishRelay<Void>()
     
     private let navigationBarColor: UIColor
     private let imageSize: CGFloat = 24
@@ -76,18 +80,6 @@ final class NavigationBarView: UIView, NavigationBarProtocol {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc private func leftButtonTapped() {
-        leftButtonAction.accept(())
-    }
-    
-    @objc private func rightButtonTapped() {
-        rightButtonAction.accept(())
-    }
-    
-    @objc private func hiddenButtonTapped() {
-        hiddenButtonAction.accept(())
     }
     
     override func layoutSubviews() {
@@ -160,53 +152,52 @@ extension NavigationBarView {
     }
     
     @discardableResult
-    func setLeftButton(
-        imageName: String
-    ) -> Observable<Void> {
+    func setLeftButton(imageName: String) -> Observable<Void> {
         leftButton.isHidden = false
-        setLeftConfig(imageName: imageName)
-        
-        leftButton.addTarget(self, action: #selector(leftButtonTapped), for: .touchUpInside)
-        return leftButtonAction
-            .asObservable()
+        setButtonConfig(button: leftButton, imageName: imageName, isSystemImage: false)
+        return leftButton.rx.tap.asObservable()
     }
-    
+
     @discardableResult
-    func setRightButton(
-        imageName: String
-    ) -> Observable<Void> {
-        rightButton.isHidden = false
-        setRightConfig(imageName: imageName)
-        
-        rightButton.addTarget(self, action: #selector(rightButtonTapped), for: .touchUpInside)
-        return rightButtonAction
-            .asObservable()
+    func setLeftButton(systemName: String) -> Observable<Void> {
+        leftButton.isHidden = false
+        setButtonConfig(button: leftButton, imageName: systemName, isSystemImage: true)
+        return leftButton.rx.tap.asObservable()
     }
+
+    @discardableResult
+    func setRightButton(imageName: String) -> Observable<Void> {
+        rightButton.isHidden = false
+        setButtonConfig(button: rightButton, imageName: imageName, isSystemImage: false)
+        return rightButton.rx.tap.asObservable()
+    }
+
+    @discardableResult
+    func setRightButton(systemName: String) -> Observable<Void> {
+        rightButton.isHidden = false
+        setButtonConfig(button: rightButton, imageName: systemName, isSystemImage: true)
+        return rightButton.rx.tap.asObservable()
+    }
+
     
     func setHiddenButton(
     ) -> Observable<Void> {
         hiddenButton.isHidden = false
-        hiddenButton.addTarget(self, action: #selector(hiddenButtonTapped), for: .touchUpInside)
         
-        return hiddenButtonAction
+        return hiddenButton.rx.tap
             .asObservable()
     }
     
-    private func setLeftConfig(imageName: String) {
+    private func setButtonConfig(button: UIButton, imageName: String, isSystemImage: Bool) {
         var buttonConfig = UIButton.Configuration.plain()
-        buttonConfig.image = UIImage(named: imageName)?
-            .resized(to: .init(width: imageSize, height: imageSize))
+        if isSystemImage {
+            buttonConfig.image = UIImage(systemName: imageName)?
+                .withConfiguration(UIImage.SymbolConfiguration(pointSize: imageSize/1.2))
+        } else {
+            buttonConfig.image = UIImage(named: imageName)?
+                .resized(to: .init(width: imageSize, height: imageSize))
+        }
         buttonConfig.imagePlacement = .all
-        
-        leftButton.configuration = buttonConfig
-    }
-    
-    private func setRightConfig(imageName: String) {
-        var buttonConfig = UIButton.Configuration.plain()
-        buttonConfig.image = UIImage(named: imageName)?
-            .resized(to: .init(width: imageSize, height: imageSize))
-        buttonConfig.imagePlacement = .all
-        
-        rightButton.configuration = buttonConfig
+        button.configuration = buttonConfig
     }
 }
