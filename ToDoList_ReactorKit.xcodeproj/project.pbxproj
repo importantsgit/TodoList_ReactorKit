@@ -20,10 +20,19 @@
 		7B50F9762C5241EE00077255 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 7B50F9752C5241EE00077255 /* RxCocoa */; };
 		7B50F9782C5241EE00077255 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7B50F9772C5241EE00077255 /* RxSwift */; };
 		7B50F97B2C5241FD00077255 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7B50F97A2C5241FD00077255 /* ReactorKit */; };
-		7B50F97E2C52450600077255 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50F97D2C52450600077255 /* DetailViewController.swift */; };
-		7B50F9802C52451300077255 /* DetailViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50F97F2C52451300077255 /* DetailViewReactor.swift */; };
+		7B50F97E2C52450600077255 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50F97D2C52450600077255 /* EditViewController.swift */; };
+		7B50F9802C52451300077255 /* EditViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50F97F2C52451300077255 /* EditViewReactor.swift */; };
 		7B50F9832C5246DA00077255 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50F9822C5246DA00077255 /* NavigationBarView.swift */; };
 		7B50F9872C5248DD00077255 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B50F9862C5248DD00077255 /* Extension+UIImage.swift */; };
+		7BA2E3102C5324B400DA5734 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2E30F2C5324B400DA5734 /* Task.swift */; };
+		7BA2E3122C53388E00DA5734 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2E3112C53388E00DA5734 /* MainRouter.swift */; };
+		7BA2E3152C533C0E00DA5734 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2E3142C533C0E00DA5734 /* TaskService.swift */; };
+		7BA2E3172C533C1D00DA5734 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2E3162C533C1D00DA5734 /* MainInteractor.swift */; };
+		7BA2E3192C533C2500DA5734 /* EditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2E3182C533C2500DA5734 /* EditInteractor.swift */; };
+		7BA2E31B2C533C2E00DA5734 /* EditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2E31A2C533C2E00DA5734 /* EditRouter.swift */; };
+		7BAD07C32C53873C00EF2240 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 7BAD07C22C53873C00EF2240 /* Differentiator */; };
+		7BAD07C52C53873C00EF2240 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 7BAD07C42C53873C00EF2240 /* RxDataSources */; };
+		7BAD07C82C53883400EF2240 /* TodoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD07C72C53883400EF2240 /* TodoSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,10 +61,17 @@
 		7B50F9592C52302300077255 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
 		7B50F95D2C52304400077255 /* MainDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDIContainer.swift; sourceTree = "<group>"; };
 		7B50F96B2C5236D500077255 /* MainViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewReactor.swift; sourceTree = "<group>"; };
-		7B50F97D2C52450600077255 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		7B50F97F2C52451300077255 /* DetailViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewReactor.swift; sourceTree = "<group>"; };
+		7B50F97D2C52450600077255 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		7B50F97F2C52451300077255 /* EditViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewReactor.swift; sourceTree = "<group>"; };
 		7B50F9822C5246DA00077255 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		7B50F9862C5248DD00077255 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
+		7BA2E30F2C5324B400DA5734 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		7BA2E3112C53388E00DA5734 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		7BA2E3142C533C0E00DA5734 /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
+		7BA2E3162C533C1D00DA5734 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		7BA2E3182C533C2500DA5734 /* EditInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInteractor.swift; sourceTree = "<group>"; };
+		7BA2E31A2C533C2E00DA5734 /* EditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRouter.swift; sourceTree = "<group>"; };
+		7BAD07C72C53883400EF2240 /* TodoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +79,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BAD07C32C53873C00EF2240 /* Differentiator in Frameworks */,
 				7B50F9782C5241EE00077255 /* RxSwift in Frameworks */,
 				7B50F97B2C5241FD00077255 /* ReactorKit in Frameworks */,
+				7BAD07C52C53873C00EF2240 /* RxDataSources in Frameworks */,
 				7B50F9762C5241EE00077255 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +111,8 @@
 			children = (
 				7B50F9522C522FBB00077255 /* App */,
 				7B50F9532C522FC100077255 /* View */,
+				7BA2E3132C533BF800DA5734 /* Service */,
+				7BA2E30E2C53249F00DA5734 /* Model */,
 				7B50F9852C52489E00077255 /* Utils */,
 				7B50F9542C522FC900077255 /* Resources */,
 				7B50F94C2C522E8F00077255 /* Info.plist */,
@@ -116,7 +136,7 @@
 			children = (
 				7B50F9812C5246CA00077255 /* Components */,
 				7B50F96A2C5236C700077255 /* Main */,
-				7B50F97C2C5244F200077255 /* Detail */,
+				7B50F97C2C5244F200077255 /* Edit */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -151,19 +171,24 @@
 		7B50F96A2C5236C700077255 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7BAD07C62C53882800EF2240 /* TableView */,
 				7B50F9422C522E8E00077255 /* MainViewController.swift */,
 				7B50F96B2C5236D500077255 /* MainViewReactor.swift */,
+				7BA2E3162C533C1D00DA5734 /* MainInteractor.swift */,
+				7BA2E3112C53388E00DA5734 /* MainRouter.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		7B50F97C2C5244F200077255 /* Detail */ = {
+		7B50F97C2C5244F200077255 /* Edit */ = {
 			isa = PBXGroup;
 			children = (
-				7B50F97D2C52450600077255 /* DetailViewController.swift */,
-				7B50F97F2C52451300077255 /* DetailViewReactor.swift */,
+				7B50F97D2C52450600077255 /* EditViewController.swift */,
+				7B50F97F2C52451300077255 /* EditViewReactor.swift */,
+				7BA2E3182C533C2500DA5734 /* EditInteractor.swift */,
+				7BA2E31A2C533C2E00DA5734 /* EditRouter.swift */,
 			);
-			path = Detail;
+			path = Edit;
 			sourceTree = "<group>";
 		};
 		7B50F9812C5246CA00077255 /* Components */ = {
@@ -190,6 +215,30 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		7BA2E30E2C53249F00DA5734 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7BA2E30F2C5324B400DA5734 /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7BA2E3132C533BF800DA5734 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7BA2E3142C533C0E00DA5734 /* TaskService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7BAD07C62C53882800EF2240 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				7BAD07C72C53883400EF2240 /* TodoSection.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -211,6 +260,8 @@
 				7B50F9752C5241EE00077255 /* RxCocoa */,
 				7B50F9772C5241EE00077255 /* RxSwift */,
 				7B50F97A2C5241FD00077255 /* ReactorKit */,
+				7BAD07C22C53873C00EF2240 /* Differentiator */,
+				7BAD07C42C53873C00EF2240 /* RxDataSources */,
 			);
 			productName = ToDoList_ReactorKit;
 			productReference = 7B50F93B2C522E8E00077255 /* ToDoList_ReactorKit.app */;
@@ -243,6 +294,7 @@
 			packageReferences = (
 				7B50F9742C5241ED00077255 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				7B50F9792C5241FD00077255 /* XCRemoteSwiftPackageReference "ReactorKit" */,
+				7BAD07C12C53873C00EF2240 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 7B50F93C2C522E8E00077255 /* Products */;
 			projectDirPath = "";
@@ -270,18 +322,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B50F97E2C52450600077255 /* DetailViewController.swift in Sources */,
+				7B50F97E2C52450600077255 /* EditViewController.swift in Sources */,
+				7BA2E3122C53388E00DA5734 /* MainRouter.swift in Sources */,
 				7B50F95E2C52304400077255 /* MainDIContainer.swift in Sources */,
+				7BA2E3192C533C2500DA5734 /* EditInteractor.swift in Sources */,
 				7B50F9832C5246DA00077255 /* NavigationBarView.swift in Sources */,
 				7B50F9872C5248DD00077255 /* Extension+UIImage.swift in Sources */,
+				7BA2E3152C533C0E00DA5734 /* TaskService.swift in Sources */,
 				7B50F96C2C5236D500077255 /* MainViewReactor.swift in Sources */,
+				7BAD07C82C53883400EF2240 /* TodoSection.swift in Sources */,
 				7B50F9562C522FE800077255 /* AppDIContainer.swift in Sources */,
 				7B50F9432C522E8E00077255 /* MainViewController.swift in Sources */,
 				7B50F9582C522FF700077255 /* AppFlowCoordinator.swift in Sources */,
-				7B50F9802C52451300077255 /* DetailViewReactor.swift in Sources */,
+				7BA2E3102C5324B400DA5734 /* Task.swift in Sources */,
+				7B50F9802C52451300077255 /* EditViewReactor.swift in Sources */,
 				7B50F93F2C522E8E00077255 /* AppDelegate.swift in Sources */,
 				7B50F9412C522E8E00077255 /* SceneDelegate.swift in Sources */,
 				7B50F95A2C52302300077255 /* MainFlowCoordinator.swift in Sources */,
+				7BA2E31B2C533C2E00DA5734 /* EditRouter.swift in Sources */,
+				7BA2E3172C533C1D00DA5734 /* MainInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,8 +494,8 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = light;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,8 +528,8 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = light;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -526,6 +585,14 @@
 				minimumVersion = 3.2.0;
 			};
 		};
+		7BAD07C12C53873C00EF2240 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -543,6 +610,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7B50F9792C5241FD00077255 /* XCRemoteSwiftPackageReference "ReactorKit" */;
 			productName = ReactorKit;
+		};
+		7BAD07C22C53873C00EF2240 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BAD07C12C53873C00EF2240 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		7BAD07C42C53873C00EF2240 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BAD07C12C53873C00EF2240 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
