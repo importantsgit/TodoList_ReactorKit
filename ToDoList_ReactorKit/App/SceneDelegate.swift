@@ -9,6 +9,9 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    let appDIContainer = AppDIContainer()
+    // MARK: - appFlowCoordinator를 프로퍼티로 둬 메모리에서 사라지지 않게 수정
+    var appFlowCoordinator: AppFlowCoordinator?
     var window: UIWindow?
 
 
@@ -17,15 +20,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         let navigationController = UINavigationController()
-        let appDependencies = AppDIContainer()
-        let appFlowCoordinator = AppFlowCoordinator(
+        
+        appFlowCoordinator = AppFlowCoordinator(
             navigationController: navigationController,
-            dependencies: appDependencies
+            dependencies: appDIContainer
         )
         
         window?.backgroundColor = .blue
         window?.rootViewController = navigationController
-        appFlowCoordinator.start()
+        appFlowCoordinator?.start()
         window?.makeKeyAndVisible()
     }
 
